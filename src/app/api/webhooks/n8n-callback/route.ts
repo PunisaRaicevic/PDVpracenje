@@ -1,11 +1,15 @@
 import { createClient } from '@supabase/supabase-js'
 import { NextRequest, NextResponse } from 'next/server'
 
-// Use service role key for webhook (bypasses RLS)
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-)
+export const dynamic = 'force-dynamic'
+
+// Create admin client lazily (not at module level for Vercel build)
+function getSupabaseAdmin() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  )
+}
 
 interface N8nCallbackPayload {
   invoice_id: string
@@ -50,7 +54,7 @@ export async function POST(request: NextRequest) {
 
     // Check if there was an error during extraction
     if (payload.error) {
-      const { error: updateError } = await supabaseAdmin
+      const { error: updateError } = await getSupabaseAdmin()
         .from('invoices')
         .update({
           status: 'error',
@@ -74,7 +78,7 @@ export async function POST(request: NextRequest) {
     const confidence = payload.extraction_confidence || calculateConfidence(payload)
 
     // Update invoice with extracted data
-    const { error: updateError } = await supabaseAdmin
+    const { error: updateError } = await getSupabaseAdmin()
       .from('invoices')
       .update({
         invoice_number: payload.invoice_number,

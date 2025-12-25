@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase-server'
 import { getReportExtension } from '@/lib/report-generator'
 
+export const dynamic = 'force-dynamic'
+
 // GET - Download report file
 export async function GET(
   request: NextRequest,

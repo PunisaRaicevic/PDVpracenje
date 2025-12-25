@@ -8,6 +8,8 @@ import {
   getReportExtension,
 } from '@/lib/report-generator'
 
+export const dynamic = 'force-dynamic'
+
 // GET - List reports for the organization
 export async function GET(request: NextRequest) {
   try {
