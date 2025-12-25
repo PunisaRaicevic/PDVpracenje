@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <!-- Teal gear gradient -->
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4DE0C5"/>
+      <stop offset="100%" style="stop-color:#3ECFB2"/>
+    </linearGradient>
+    <!-- Lime gear gradient -->
+    <linearGradient id="limeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#B5E550"/>
+      <stop offset="100%" style="stop-color:#9ACD32"/>
+    </linearGradient>
+  </defs>
+
+  <!-- TEAL GEAR (top-left) -->
+  <g transform="translate(70, 70)">
+    <!-- Gear body -->
+    <circle cx="0" cy="0" r="52" fill="url(#tealGrad)"/>
+    <!-- Gear teeth (12 teeth) -->
+    <g fill="url(#tealGrad)">
+      <rect x="-6" y="-68" width="12" height="20" rx="2"/>
+      <rect x="-6" y="-68" width="12" height="20" rx="2" transform="rotate(30)"/>
+      <rect x="-6" y="-68" width="12" height="20" rx="2" transform="rotate(60)"/>
+      <rect x="-6" y="-68" width="12" height="20" rx="2" transform="rotate(90)"/>
+      <rect x="-6" y="-68" width="12" height="20" rx="2" transform="rotate(120)"/>
+      <rect x="-6" y="-68" width="12" height="20" rx="2" transform="rotate(150)"/>
+      <rect x="-6" y="-68" width="12" height="20" rx="2" transform="rotate(180)"/>
+      <rect x="-6" y="-68" width="12" height="20" rx="2" transform="rotate(210)"/>
+      <rect x="-6" y="-68" width="12" height="20" rx="2" transform="rotate(240)"/>
+      <rect x="-6" y="-68" width="12" height="20" rx="2" transform="rotate(270)"/>
+      <rect x="-6" y="-68" width="12" height="20" rx="2" transform="rotate(300)"/>
+      <rect x="-6" y="-68" width="12" height="20" rx="2" transform="rotate(330)"/>
+    </g>
+    <!-- Inner circle cutout -->
+    <circle cx="0" cy="0" r="30" fill="#1E2A3B"/>
+    <!-- Decorative elements -->
+    <circle cx="0" cy="0" r="22" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <circle cx="-15" cy="-15" r="4" fill="none" stroke="white" stroke-width="1.5"/>
+    <circle cx="-15" cy="-15" r="1.5" fill="white"/>
+    <!-- Crosshair lines -->
+    <line x1="-8" y1="0" x2="8" y2="0" stroke="white" stroke-width="1.5"/>
+    <line x1="0" y1="-8" x2="0" y2="8" stroke="white" stroke-width="1.5"/>
+    <!-- Corner markers -->
+    <path d="M -20 -30 L -30 -30 L -30 -20" fill="none" stroke="white" stroke-width="1.5"/>
+    <path d="M 20 30 L 30 30 L 30 20" fill="none" stroke="white" stroke-width="1.5"/>
+  </g>
+
+  <!-- LIME GEAR (bottom-right) -->
+  <g transform="translate(130, 130)">
+    <!-- Gear body -->
+    <circle cx="0" cy="0" r="52" fill="url(#limeGrad)"/>
+    <!-- Gear teeth (12 teeth) - offset by 15 degrees -->
+    <g fill="url(#limeGrad)">
+      <rect x="-6" y="-68" width="12" height="20" rx="2" transform="rotate(15)"/>
+      <rect x="-6" y="-68" width="12" height="20" rx="2" transform="rotate(45)"/>
+      <rect x="-6" y="-68" width="12" height="20" rx="2" transform="rotate(75)"/>
+      <rect x="-6" y="-68" width="12" height="20" rx="2" transform="rotate(105)"/>
+      <rect x="-6" y="-68" width="12" height="20" rx="2" transform="rotate(135)"/>
+      <rect x="-6" y="-68" width="12" height="20" rx="2" transform="rotate(165)"/>
+      <rect x="-6" y="-68" width="12" height="20" rx="2" transform="rotate(195)"/>
+      <rect x="-6" y="-68" width="12" height="20" rx="2" transform="rotate(225)"/>
+      <rect x="-6" y="-68" width="12" height="20" rx="2" transform="rotate(255)"/>
+      <rect x="-6" y="-68" width="12" height="20" rx="2" transform="rotate(285)"/>
+      <rect x="-6" y="-68" width="12" height="20" rx="2" transform="rotate(315)"/>
+      <rect x="-6" y="-68" width="12" height="20" rx="2" transform="rotate(345)"/>
+    </g>
+    <!-- Inner circle cutout -->
+    <circle cx="0" cy="0" r="30" fill="#1E2A3B"/>
+    <!-- Decorative elements -->
+    <circle cx="0" cy="0" r="22" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <circle cx="15" cy="15" r="4" fill="none" stroke="white" stroke-width="1.5"/>
+    <circle cx="15" cy="15" r="1.5" fill="white"/>
+    <!-- Crosshair lines -->
+    <line x1="-8" y1="0" x2="8" y2="0" stroke="white" stroke-width="1.5"/>
+    <line x1="0" y1="-8" x2="0" y2="8" stroke="white" stroke-width="1.5"/>
+    <!-- Corner markers -->
+    <path d="M -20 -30 L -30 -30 L -30 -20" fill="none" stroke="white" stroke-width="1.5"/>
+    <path d="M 20 30 L 30 30 L 30 20" fill="none" stroke="white" stroke-width="1.5"/>
+  </g>
+
+  <!-- Center overlay circle -->
+  <circle cx="100" cy="100" r="35" fill="#1E2A3B"/>
+  <circle cx="100" cy="100" r="32" fill="none" stroke="white" stroke-width="1" opacity="0.3"/>
+</svg>

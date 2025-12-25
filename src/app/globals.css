@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* SERVICEX Brand Colors - Modern Blue Theme */
+  --steel-blue: #5B8BA0;
+  --steel-blue-dark: #4A7C91;
+  --steel-blue-light: #6B9BB0;
+  --accent-blue: #2E86AB;
+  --accent-blue-dark: #1E5F7A;
+
+  /* Card and surface colors */
+  --card-white: #FFFFFF;
+  --card-off-white: #F8FAFC;
+  --text-dark: #1E3A5F;
+  --text-muted: #64748B;
+  --text-light: #94A3B8;
+
+  /* Theme variables */
+  --foreground-rgb: 30, 58, 95;
+  --background-start-rgb: 91, 139, 160;
+  --background-end-rgb: 74, 124, 145;
+
+  /* Card backgrounds */
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --card-border: rgba(30, 58, 95, 0.1);
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(135deg, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+  min-height: 100vh;
+}
+
+/* Custom scrollbar for blue theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #4A7C91;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6B9BB0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2E86AB;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Responsive Typography */
+  .heading-1 {
+    @apply text-2xl sm:text-3xl lg:text-4xl font-bold;
+  }
+
+  .heading-2 {
+    @apply text-xl sm:text-2xl lg:text-3xl font-bold;
+  }
+
+  .heading-3 {
+    @apply text-lg sm:text-xl lg:text-2xl font-semibold;
+  }
+
+  .heading-4 {
+    @apply text-base sm:text-lg lg:text-xl font-semibold;
+  }
+
+  .body-large {
+    @apply text-base sm:text-lg;
+  }
+
+  .body-normal {
+    @apply text-sm sm:text-base;
+  }
+
+  .body-small {
+    @apply text-xs sm:text-sm;
+  }
+
+  /* Mobile-first text truncation */
+  .truncate-mobile {
+    @apply truncate max-w-[120px] sm:max-w-[200px] lg:max-w-none;
+  }
+}
+
+@layer components {
+  /* Clean white card */
+  .glass-card {
+    @apply bg-white/95 backdrop-blur-sm border border-steel-200 rounded-xl shadow-lg;
+  }
+
+  /* Primary blue button */
+  .btn-glow {
+    @apply bg-gradient-to-r from-accent-500 to-accent-600 text-white px-4 py-2 rounded-lg
+           hover:shadow-glow-blue transition-all duration-300;
+  }
+
+  /* Secondary button */
+  .btn-glow-lime {
+    @apply bg-gradient-to-r from-steel-500 to-steel-600 text-white px-4 py-2 rounded-lg
+           hover:shadow-glow-steel transition-all duration-300 font-medium;
+  }
+
+  /* Stat card styling */
+  .stat-card {
+    @apply bg-white border border-steel-200 rounded-xl p-6 shadow-md
+           hover:border-accent-400 hover:shadow-lg transition-all duration-300;
+  }
+
+  /* Input styling for blue theme */
+  .input-dark {
+    @apply bg-white border border-steel-300 text-steel-800 rounded-lg px-4 py-2
+           focus:border-accent-500 focus:ring-1 focus:ring-accent-500 focus:outline-none
+           placeholder:text-steel-400;
+  }
+
+  /* Select styling for blue theme */
+  .select-dark {
+    @apply bg-white border border-steel-300 text-steel-800 rounded-lg px-4 py-2
+           focus:border-accent-500 focus:ring-1 focus:ring-accent-500 focus:outline-none;
+  }
+}
